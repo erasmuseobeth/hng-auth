@@ -57,4 +57,4 @@ export async function GET(request: NextRequest, { params }: { params: { orgId: s
       message: 'Internal server error',
     }, { status: 500 });
   }
-}
+};
