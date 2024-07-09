@@ -56,7 +56,7 @@ export async function POST(request: Request) {
           },
         },
       });
-
+// return user and orgsnisation
       return { user, organisation };
     });
 
