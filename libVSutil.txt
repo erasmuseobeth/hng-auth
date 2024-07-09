@@ -1,0 +1,65 @@
+The distinction between a `lib` (library) and a `utils` (utilities) folder in a project can often be subtle, but it generally comes down to the scope and nature of the code they contain.
+
+### `lib` (Library)
+- **Purpose**: The `lib` directory is typically used for code that encapsulates more significant functionality or external dependencies. It often contains modules or components that could be reused across multiple parts of the application.
+- **Examples**:
+  - **Database interactions**: For instance, a file that sets up and exports a Prisma client instance.
+  - **Authentication**: Functions or classes that handle user authentication, token generation, etc.
+  - **External API integrations**: Modules that interact with third-party services.
+
+### `utils` (Utilities)
+- **Purpose**: The `utils` directory is usually for smaller, helper functions or utilities that assist in common tasks but are not substantial enough to be considered part of a larger library or module.
+- **Examples**:
+  - **Validation functions**: Functions that validate user input or data structures.
+  - **Formatting helpers**: Functions that format dates, strings, numbers, etc.
+  - **Utility functions**: General-purpose functions that are used in various parts of the codebase, such as debouncing, throttling, or deep-cloning objects.
+
+### Example of Names
+
+#### `lib` Examples:
+1. **prisma.ts**: Sets up and exports the Prisma client.
+2. **auth.ts**: Handles user authentication, token creation, and verification.
+3. **apiClient.ts**: Contains functions for making API requests to external services.
+4. **emailService.ts**: Functions for sending emails via an external email service.
+
+#### `utils` Examples:
+1. **validation.ts**: Contains validation functions for user inputs.
+2. **formatters.ts**: Functions to format dates, strings, etc.
+3. **helpers.ts**: General-purpose helper functions.
+4. **debounce.ts**: A function to debounce a given function.
+
+### Application to Your Project
+
+Based on the current context, here's how you might categorize your existing code:
+
+#### `lib`:
+- **prisma.ts**: The file that sets up and exports the Prisma client.
+- **auth.ts**: Functions for authenticating users and generating tokens.
+- **jwt.ts**: Functions related to JWT token generation and verification.
+
+#### `utils`:
+- **validation.ts**: Contains validation functions like `validateUser`, `validateLogin`, and `validateOrganisation`.
+
+### Example File Structure
+
+```plaintext
+src/
+  lib/
+    prisma.ts
+    auth.ts
+    jwt.ts
+  utils/
+    validation.ts
+    formatters.ts
+    helpers.ts
+  api/
+    auth/
+      login/
+        route.ts
+      register/
+        route.ts
+    organisations/
+      route.ts
+```
+
+This organization keeps your code modular and easy to manage, making it clear where different types of functionality should reside.
