@@ -59,6 +59,14 @@
   transition: transform 200ms;
 }
 
+.link{
+  display:block;
+  transition: transform 200ms;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+  color:white;
+  text-align: center;
+}
 .card h2 {
   font-weight: 600;
   margin-bottom: 0.7rem;
@@ -79,6 +87,8 @@
   align-items: center;
   position: relative;
   padding: 4rem 0;
+  flex-direction: column;
+  background:rgba(104, 135, 141, 0.486);
 }
 
 .center::before {

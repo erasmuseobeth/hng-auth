@@ -1,15 +1,16 @@
 import Link from "next/link";
+import styles from "./page.module.css"
 
 export default function Home() {
   return (
     <>
     <div>
-      <div>hng-auth-user endpoints home</div>
-      <Link href="/auth/register">/auth/register</Link>
-      <Link href="/auth/login">/auth/login</Link>
-      <Link href="/api/users/id">/auth/register</Link>
-      <Link href="/api/organisations">/auth/register</Link>
-      <Link href="/api/organisations/orgid/users">/auth/register</Link>
+      <div className={styles.center}>hng-auth-user endpoints home</div>
+      <Link className={styles.link} href="/auth/register">/auth/register</Link>
+      <Link className={styles.link} href="/auth/login">/auth/login</Link>
+      <Link className={styles.link} href="/api/users/id">/auth/register</Link>
+      <Link className={styles.link} href="/api/organisations">/auth/register</Link>
+      <Link className={styles.link} href="/api/organisations/orgid/users">/auth/register</Link>
     </div>
     </>
   );
