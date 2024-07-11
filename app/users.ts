@@ -1,9 +1,12 @@
-// app/api/organisations/[orgId]/users/route.ts
-import { NextResponse, NextRequest } from 'next/server';
-import  prisma  from '@/lib/prisma';
+// app/api/organisations/[orgId]/users/
+import { NextResponse } from 'next/server';
+import prisma from '@/lib/prisma';
 import { authenticateUser } from '@/lib/auth';
+import { NextRequest } from 'next/server';
 
 export async function POST(request: NextRequest, { params }: { params: { orgId: string } }) {
+
+  console.log("VERentered this file..................")
   // Authenticate the user
   const authenticatedUser = await authenticateUser(request);
   if (!authenticatedUser) {
@@ -66,4 +69,4 @@ export async function POST(request: NextRequest, { params }: { params: { orgId: 
       message: 'Internal server error',
     }, { status: 500 });
   }
-};
+}

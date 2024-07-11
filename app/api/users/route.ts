@@ -1,6 +1,6 @@
 // app/api/organisations/[orgId]/users/route.ts
 import { NextResponse, NextRequest } from 'next/server';
-import  prisma  from '@/lib/prisma';
+import prisma from '@/lib/prisma';
 import { authenticateUser } from '@/lib/auth';
 
 export async function POST(request: NextRequest, { params }: { params: { orgId: string } }) {
@@ -66,4 +66,4 @@ export async function POST(request: NextRequest, { params }: { params: { orgId: 
       message: 'Internal server error',
     }, { status: 500 });
   }
-};
+}
